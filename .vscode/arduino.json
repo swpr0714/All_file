@@ -3,5 +3,5 @@
     "configuration": "cpu=atmega328old",
     "board": "arduino:avr:nano",
     "programmer": "arduino:avrisp",
-    "sketch": "analog test\\analog.ino"
+    "sketch": "工程專題_鋼琴\\Piano.ino"
 }
