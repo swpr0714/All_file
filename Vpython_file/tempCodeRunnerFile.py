@@ -1,21 +1,24 @@
-from vpython import *
-
-v=0
-a=-9.8
-t=0
-dt=0.001
-n=0
-
-scene = canvas(width=1920, height=1080, x=0, y=0, center=vec(0,0,0))
-floor = box (size=vec(10,0.5,10),pos=vec(0,-0.25,0),color=color.cyan)
-ball = sphere (pos=vec(0,10,0),radius=0.2,color=color.red)
-
-while(n<=3):
+while (stone.pos.y>-5):
     rate(1000)
-    ball.pos.y+=v*dt
-    v+=a*dt
-    t+=dt
-    if (ball.pos.y<=0.2):
-        v=-0.9*v
-        n+=1
-print(t)
+    ya=stone.pos.y
+    v0.y+=g*dt
+    stone.pos+=v0*dt
+    yb=stone.pos.y
+    
+    if (stone.pos.y<0):
+        print(v0.x)
+        h = stone.pos.y
+        if (stone.pos.y>0.5):
+            h=0.5
+        B = get_B(rho,r,-h)
+
+    
+    if (stone.pos.y<0 and ya*yb<0 and v0.x>5):
+        v0.x*=0.8
+        v0.y*=-0.8
+
+    scene.center=stone.pos
+    # if (v0.y<0.5):
+    #     v0=vec(0,0,0)
+stone.rotate(angle=-theta,axis=vec(0,0,1),origin=vec(stone.pos))
+    

@@ -1,19 +1,21 @@
 from simple_pid import PID
 from vpython import *
 import matplotlib.pyplot as plt
-"""
+
 scene = canvas(width=1920, height=1080,x=0,y=0, center=vec(0,0,0))
 floor = box(pos=vec(0,0,0),size=vec(25,0.1,0.1),color=color.red)
 center = box(pos=vec(0,0,0),size=vec(0.1,10,0.1),color=color.cyan)
 ball = sphere(pos=vec(-10,0,0),radius=0.5,color=color.blue)
-"""
+
 v=0
-#current_pt=ball.pos.x
-current_pt=-10
+m=0.05
+g=9.8
+current_pt=ball.pos.x
+#current_pt=-10
 des_pt = 0
 dt=0.001
 t=0
-acc_range=[-10,10]
+acc_range=[-50,50]
 
 pid = PID(0, 10000, 280, setpoint=des_pt, proportional_on_measurement=False, output_limits=acc_range)
 #pid = PID(0.1, 0.1, 0.05, setpoint=des_pt, proportional_on_measurement=False, output_limits=acc_range)
@@ -26,25 +28,31 @@ l_componets=[]
 l_maxv=[]
 l_maxvt=[]
 l_0=[]
+
 while n<10:
-    rate(5000)
+    rate(1000)
     acc_control = pid(current_pt, dt=pid.sample_time)
-    #ball.pos.x+=v*dt
-    #current_pt = ball.pos.x
-    current_pt+=v*dt
+    ball.pos.x+=v*dt
+    current_pt = ball.pos.x
+    #current_pt+=v*dt
     v += acc_control*dt
+
+    ball.rotate(angle=pi/1600,axis=vec(0,0,1),origin=vec(0,0,1))
+    floor.rotate(angle=pi/1600,axis=vec(0,0,1),origin=vec(0,0,1))
+    
     l_point.append(current_pt)
     l_speed.append(v)
     l_acc.append(acc_control)
     l_componets.append(pid.components)
     l_0.append(0)
+    
     t+=dt
     if (v>-0.008 and v<0.008):
         n+=1
         l_maxv.append(current_pt)
         l_maxvt.append(t)
-print (t)
-print(l_maxv, l_maxvt)
+#print (t)
+#print(l_maxv, l_maxvt)
     
 
 def plot_history(data_list, line,plt_title,legends=None):
