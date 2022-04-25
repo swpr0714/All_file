@@ -10,14 +10,17 @@ int main(){
         if (n==0){facn=1;}
         if (m==0){facm=1;}
         for (int i=0;i<m;i++){pow*=n;}
-     while(n>1){
-        n--;
-        facn*=n;
-    }
-    while(m>1){
-        m--;
-        facm*=m;
-    }
-    cout<<(facn/facm)+pow<<endl;
+    
+        while(n>1){
+            n--;
+            facn*=n;
+        }
+    
+        while(m>1){
+            m--;
+            facm*=m;
+        }
+    
+        cout<<(facn/facm)+pow<<endl;
     }
 }

@@ -1,8 +1,8 @@
 from vpython import *
 R1=1; R2=2; R3=3; R4=4; R5=5; L=30
-scene = canvas(width=2800, height=1800, x=0, y=0)
-floor = box (size=vec(2*L,0.2,1),pos=vec(0,-0.1,0))
-
+scene = canvas(width=2800, height=1800, x=0, y=0,color=color.white)
+floor = box (size=vec(2*L,0.2,1),pos=vec(0,-0.1,0),color=color.black)
+back = box (size=vec(200,200,1),pos=vec(0,0,-20),color=color.white)
 
 a = cylinder(radius=R1,pos=vec(-L+R5,R1,0),axis=vec(0,0,1))
 ball1 = sphere (radius=0.01,pos=vec(a.pos.x,0.01,1),color=color.red,make_trail=True)
