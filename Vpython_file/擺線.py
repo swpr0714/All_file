@@ -2,21 +2,21 @@ from vpython import *
 R1=1; R2=2; R3=3; R4=4; R5=5; L=30
 scene = canvas(width=2800, height=1800, x=0, y=0,color=color.white)
 floor = box (size=vec(2*L,0.2,1),pos=vec(0,-0.1,0),color=color.black)
-back = box (size=vec(200,200,1),pos=vec(0,0,-20),color=color.white)
+back = box (size=vec(200,200,1),pos=vec(0,0,-20),color=vec(1,1,1))
 
-a = cylinder(radius=R1,pos=vec(-L+R5,R1,0),axis=vec(0,0,1))
+a = cylinder(radius=R1,pos=vec(-L+R5,R1,0),axis=vec(0,0,1),color=vec(0.9,0.9,0.9))
 ball1 = sphere (radius=0.01,pos=vec(a.pos.x,0.01,1),color=color.red,make_trail=True)
 
-b = cylinder(radius=R2,pos=vec(-L+R5,R2,0),axis=vec(0,0,1))
+b = cylinder(radius=R2,pos=vec(-L+R5,R2,0),axis=vec(0,0,1),color=vec(0.9,0.9,0.9))
 ball2 = sphere (radius=0.01,pos=vec(b.pos.x,0.01,1),color=color.yellow,make_trail=True)
 
-c = cylinder(radius=R3,pos=vec(-L+R5,R3,0),axis=vec(0,0,1))
+c = cylinder(radius=R3,pos=vec(-L+R5,R3,0),axis=vec(0,0,1),color=vec(0.9,0.9,0.9))
 ball3 = sphere (radius=0.01,pos=vec(c.pos.x,0.01,1),color=color.green,make_trail=True)
 
-d = cylinder(radius=R4,pos=vec(-L+R5,R4,0),axis=vec(0,0,1))
+d = cylinder(radius=R4,pos=vec(-L+R5,R4,0),axis=vec(0,0,1),color=vec(0.9,0.9,0.9))
 ball4 = sphere (radius=0.01,pos=vec(d.pos.x,0.01,1),color=color.cyan,make_trail=True)
 
-e = cylinder(radius=R5,pos=vec(-L+R5,R5,0),axis=vec(0,0,1))
+e = cylinder(radius=R5,pos=vec(-L+R5,R5,0),axis=vec(0,0,1),color=vec(0.9,0.9,0.9))
 ball5 = sphere (radius=0.01,pos=vec(e.pos.x,0.01,1),color=color.magenta,make_trail=True)
 
 graph_y_t = graph(title="y-t plot", width=1400, height=900, x=0, y=400, xtitle="t(s)", ytitle="y(m)",color=color.black)

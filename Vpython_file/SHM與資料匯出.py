@@ -19,7 +19,6 @@ t_list=[]
 T=["T1","T2","T3","T4","T5"]
 avg_t=[]
 
-
 with open("t_x_v.csv",'w',newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerow(["時間","位置","速度"])
@@ -41,3 +40,4 @@ with open("t_x_v.csv",'w',newline='') as csvfile:
     print("一次震盪週期 T=",np.average(avg_t),"(這是前五次的平均值)")
     print("由公式計算得 T=",2*math.pi*math.sqrt(m/k)) 
     print("嗯對 平均值與理論值接近 兩者相等")
+    

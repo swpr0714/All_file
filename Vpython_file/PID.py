@@ -36,7 +36,7 @@ pid.sample_time = 0.1
 #___Main_Program___#
 sleep(0.5)
 while t<30:
-    rate(6000)
+    rate(1000)
     #___Calculate_Vector___#
     theta1=atan(abs(floor.axis.y)/abs(floor.axis.x))
     theta = pid(distance, dt=pid.sample_time)
